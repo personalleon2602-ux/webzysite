@@ -1219,6 +1219,59 @@
   color: #0a84ff;
 }
 
+/* ---------- Reviews (hidden until config.reviews has entries) ---------- */
+.reviews-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(min(100%, 300px), 1fr));
+  gap: 14px;
+}
+.review-card {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  gap: 24px;
+  margin: 0;
+  padding: 26px 24px;
+  border: 1px solid #1e1e2e;
+  border-radius: 12px;
+  background: #050508;
+}
+.review-card__quote {
+  margin: 0;
+  color: var(--silver);
+  font-size: 15px;
+  line-height: 1.65;
+}
+.review-card__quote::before {
+  content: "“";
+  display: block;
+  margin-bottom: 6px;
+  color: #0a84ff;
+  font-family: var(--font-serif);
+  font-size: 40px;
+  line-height: 0.6;
+}
+.review-card__author {
+  display: grid;
+  gap: 4px;
+  font-size: 13px;
+}
+.review-card__author strong {
+  color: var(--white);
+  font-weight: 500;
+}
+.review-card__author span,
+.review-card__author a {
+  color: var(--muted-2);
+  font-family: var(--font-mono);
+  font-size: 10px;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+}
+.review-card__author a:hover {
+  color: #0a84ff;
+}
+
 /* ---------- Hero 3D floor ---------- */
 .hero__floor {
   position: absolute;

@@ -20,6 +20,13 @@ window.WEBZY_CONFIG = {
   whatsappNumber: "",
   whatsappMessage: "Përshëndetje WEBZY! Dua të di më shumë për një faqe interneti.",
 
+  /* Client reviews — only real reviews, with the client's permission.
+     The "Vlerësime" section on the homepage stays hidden while this is empty.
+     Example:
+       { quote: "Faqja u bë gati për 7 ditë...", name: "Arben K.",
+         business: "Kafe Luna, Prishtinë", url: "https://kafeluna.com" } */
+  reviews: [],
+
   /* Contact form delivery through FormSubmit.
      ------------------------------------------------------------------------
      Submissions are POSTed to this AJAX endpoint and emailed to the contact

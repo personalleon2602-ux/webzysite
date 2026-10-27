@@ -381,6 +381,42 @@
     });
   }
 
+  /* Reviews stay hidden until real client reviews are added in config.js. */
+  const reviews = (Array.isArray(config.reviews) ? config.reviews : []).filter(
+    (review) => review && String(review.quote || '').trim() && String(review.name || '').trim()
+  );
+  const reviewsSection = $('[data-reviews]');
+  const reviewsGrid = $('[data-reviews-grid]');
+  if (reviews.length && reviewsSection && reviewsGrid) {
+    reviews.forEach((review) => {
+      const card = doc.createElement('figure');
+      card.className = 'review-card';
+      const quote = doc.createElement('blockquote');
+      quote.className = 'review-card__quote';
+      quote.textContent = String(review.quote).trim();
+      const caption = doc.createElement('figcaption');
+      caption.className = 'review-card__author';
+      const name = doc.createElement('strong');
+      name.textContent = String(review.name).trim();
+      caption.append(name);
+      const business = String(review.business || '').trim();
+      if (business) {
+        const url = String(review.url || '').trim();
+        const meta = doc.createElement(/^https:\/\//.test(url) ? 'a' : 'span');
+        meta.textContent = business;
+        if (meta.tagName === 'A') {
+          meta.href = url;
+          meta.target = '_blank';
+          meta.rel = 'noopener noreferrer';
+        }
+        caption.append(meta);
+      }
+      card.append(quote, caption);
+      reviewsGrid.append(card);
+    });
+    reviewsSection.hidden = false;
+  }
+
   /* Hide developer-facing setup notes once the real details are connected. */
   const formEndpoint = String(config.formEndpoint || '').trim();
   const endpointConfigured = Boolean(formEndpoint);
