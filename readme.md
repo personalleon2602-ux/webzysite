@@ -294,7 +294,7 @@ The WEBZY logo was processed from the supplied original into transparent PNG ass
 - `webzy-logo.png` — stacked full logo
 - `webzy-mark.png` — symbol only
 - `webzy-wordmark.png` — wordmark only
-- `favicon-64.png`, `apple-touch-icon.png` — app icons
+- `favicon-48/96/192/512.png`, `apple-touch-icon.png`, `/favicon.ico`, `/site.webmanifest` — browser, Google Search and app icons (Google needs a square multiple of 48px)
 
 Shapes, proportions and letterforms were preserved. Keep the supplied original as the brand master.
 
