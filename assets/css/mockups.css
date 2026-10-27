@@ -1,0 +1,2120 @@
+/* ==========================================================================
+   WEBZY — Device frames & concept mockups
+   Every mini-site is an original design study, built in HTML/CSS.
+   ========================================================================== */
+
+/* ---------- Laptop ---------- */
+.laptop {
+  position: relative;
+  width: 100%;
+  filter: drop-shadow(0 50px 70px rgba(0, 0, 0, 0.52));
+}
+.laptop__lid {
+  position: relative;
+  z-index: 2;
+  padding: 0.62% 0.62% 0.75%;
+  border: 1px solid rgba(255, 255, 255, 0.24);
+  border-radius: clamp(10px, 1.1vw, 18px);
+  background:
+    linear-gradient(145deg, rgba(255, 255, 255, 0.2), transparent 18%),
+    linear-gradient(160deg, #2b2d31 0%, #141518 42%, #08090b 100%);
+  box-shadow:
+    inset 0 1px 0 rgba(255, 255, 255, 0.32),
+    inset 0 -1px 0 rgba(255, 255, 255, 0.08),
+    0 1px 1px rgba(255, 255, 255, 0.13);
+}
+.laptop__lid::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  border-radius: inherit;
+  pointer-events: none;
+  box-shadow: inset 0 0 0 1px rgba(0, 0, 0, 0.55);
+}
+.laptop__screen {
+  position: relative;
+  aspect-ratio: 16 / 10;
+  overflow: hidden;
+  border-radius: clamp(4px, 0.5vw, 8px);
+  background: #000;
+  container-type: inline-size;
+  box-shadow: 0 0 0 1px #000;
+}
+.laptop__screen::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  z-index: 50;
+  pointer-events: none;
+  border-radius: inherit;
+  background:
+    linear-gradient(112deg, rgba(255, 255, 255, 0.12) 0%, rgba(255, 255, 255, 0.025) 18%, transparent 33%),
+    radial-gradient(ellipse at 82% 92%, rgba(67, 139, 255, 0.055), transparent 45%);
+  mix-blend-mode: screen;
+}
+.laptop__camera {
+  position: absolute;
+  z-index: 3;
+  top: 0.34%;
+  left: 50%;
+  width: 2.2%;
+  height: 0.55%;
+  border-radius: 999px;
+  background: #08090b;
+  transform: translateX(-50%);
+  box-shadow: inset 0 0 0 1px rgba(255, 255, 255, 0.08);
+}
+.laptop__base {
+  position: relative;
+  z-index: 1;
+  width: 108%;
+  height: clamp(11px, 1.45vw, 22px);
+  margin: -1px 0 0 -4%;
+  border-radius: 1px 1px 42% 42% / 1px 1px 100% 100%;
+  background:
+    linear-gradient(180deg, #c3c7cc 0%, #8e939a 18%, #5c6168 47%, #2d3034 78%, #131417 100%);
+  box-shadow:
+    inset 0 1px 0 rgba(255, 255, 255, 0.58),
+    inset 0 -1px 0 rgba(255, 255, 255, 0.13),
+    0 14px 22px rgba(0, 0, 0, 0.45);
+}
+.laptop__base::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 50%;
+  width: 12.5%;
+  height: 34%;
+  border-radius: 0 0 8px 8px;
+  background: linear-gradient(180deg, #393d42, #17191c);
+  transform: translateX(-50%);
+  box-shadow: inset 0 -1px 0 rgba(255, 255, 255, 0.1);
+}
+.laptop__base::after {
+  content: "";
+  position: absolute;
+  bottom: -7px;
+  left: 9%;
+  right: 9%;
+  height: 16px;
+  border-radius: 50%;
+  background: rgba(0, 0, 0, 0.46);
+  filter: blur(13px);
+}
+.hero__stage .laptop__screen::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  z-index: 49;
+  pointer-events: none;
+  box-shadow: inset 0 0 44px rgba(0, 0, 0, 0.5);
+  border-radius: inherit;
+}
+
+/* ---------- Phone ---------- */
+.phone-frame {
+  position: relative;
+  width: 100%;
+  padding: 2.4%;
+  border-radius: 18% / 9%;
+  background:
+    linear-gradient(145deg, #dfe2e6 0%, #747a82 12%, #292c31 38%, #0b0c0e 68%, #3b3e43 100%);
+  box-shadow:
+    inset 0 0 0 1px rgba(255, 255, 255, 0.22),
+    inset 0 0 0 3px rgba(0, 0, 0, 0.55),
+    0 18px 35px rgba(0, 0, 0, 0.45);
+}
+.phone-frame::before,
+.phone-frame::after {
+  content: "";
+  position: absolute;
+  left: -1px;
+  width: 2px;
+  border-radius: 2px;
+  background: #3d4147;
+}
+.phone-frame::before {
+  top: 22%;
+  height: 8%;
+}
+.phone-frame::after {
+  top: 33%;
+  height: 12%;
+}
+.phone-frame__screen {
+  position: relative;
+  aspect-ratio: 9 / 19.4;
+  overflow: hidden;
+  border-radius: 16% / 8%;
+  background: #050505;
+  container-type: inline-size;
+  box-shadow: inset 0 0 0 1px rgba(255, 255, 255, 0.06);
+}
+.phone-frame__screen::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  z-index: 40;
+  border-radius: inherit;
+  pointer-events: none;
+  background: linear-gradient(115deg, rgba(255, 255, 255, 0.1), transparent 24%);
+  mix-blend-mode: screen;
+}
+.phone-frame__island {
+  position: absolute;
+  z-index: 45;
+  top: 3.2%;
+  left: 50%;
+  width: 30%;
+  height: 2.7%;
+  border-radius: 999px;
+  background: #020202;
+  transform: translateX(-50%);
+  box-shadow: inset 0 0 0 1px rgba(255, 255, 255, 0.06);
+}
+
+/* ---------- Browser chrome ---------- */
+.browser {
+  container-type: inline-size;
+  overflow: hidden;
+  border: 1px solid rgba(255, 255, 255, 0.19);
+  border-radius: clamp(4px, 0.9cqw, 9px);
+  background: #15171b;
+  box-shadow:
+    0 1.8cqw 4.6cqw rgba(0, 0, 0, 0.4),
+    0 0 0 1px rgba(0, 0, 0, 0.22);
+}
+.browser__bar {
+  display: flex;
+  align-items: center;
+  gap: 1.3cqw;
+  height: clamp(17px, 5.2cqw, 34px);
+  padding-inline: clamp(6px, 1.8cqw, 12px);
+  background: linear-gradient(180deg, #2a2d32 0%, #1b1d21 55%, #131519 100%);
+  box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.09);
+}
+.browser__dots {
+  display: flex;
+  align-items: center;
+  gap: clamp(3px, 0.9cqw, 6px);
+  flex: 0 0 auto;
+}
+.browser__dots i {
+  display: block;
+  width: clamp(3px, 0.95cqw, 7px);
+  height: clamp(3px, 0.95cqw, 7px);
+  border-radius: 50%;
+  background: #51555d;
+}
+.browser__dots i:nth-child(1) {
+  background: #6f747d;
+}
+.browser__dots i:nth-child(2) {
+  background: #555a62;
+}
+.browser__dots i:nth-child(3) {
+  background: #484c53;
+}
+.browser__url {
+  position: absolute;
+  left: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.7cqw;
+  min-width: 34%;
+  max-width: 58%;
+  padding: 0.55cqw 1.5cqw;
+  border-radius: 999px;
+  background: rgba(0, 0, 0, 0.28);
+  color: #8a909a;
+  font-family: var(--font-mono);
+  font-size: clamp(4px, 1.32cqw, 8.5px);
+  line-height: 1.2;
+  letter-spacing: 0.02em;
+  white-space: nowrap;
+  overflow: hidden;
+  transform: translateX(-50%);
+}
+.browser__url::before {
+  content: "";
+  width: clamp(2px, 0.7cqw, 4px);
+  height: clamp(2px, 0.7cqw, 4px);
+  border-radius: 50%;
+  background: #58606d;
+  flex: 0 0 auto;
+}
+.browser__bar::after {
+  content: "";
+  width: clamp(8px, 2.6cqw, 17px);
+  height: clamp(5px, 1.6cqw, 10px);
+  margin-left: auto;
+  border-radius: 2px;
+  background: rgba(255, 255, 255, 0.06);
+}
+.browser__screen {
+  position: relative;
+  aspect-ratio: 16 / 10;
+  overflow: hidden;
+  container-type: inline-size;
+  background: #0a0a0a;
+}
+.browser__screen::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  z-index: 30;
+  pointer-events: none;
+  background: linear-gradient(118deg, rgba(255, 255, 255, 0.075), transparent 24%);
+  mix-blend-mode: screen;
+}
+
+/* ==========================================================================
+   AUREL — hero concept site
+   ========================================================================== */
+.mock-aurel {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+  background: #0b0b0a;
+  color: #f1eee7;
+  container-type: inline-size;
+  font-family: var(--font-sans);
+}
+.mock-aurel__image {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center 58%;
+  filter: saturate(0.72) brightness(0.82) contrast(1.06);
+  transform: scale(1.03);
+}
+.mock-aurel__scrim {
+  position: absolute;
+  inset: 0;
+  background:
+    linear-gradient(180deg, rgba(3, 4, 3, 0.58) 0%, rgba(3, 4, 3, 0.08) 32%, rgba(3, 4, 3, 0.1) 52%, rgba(3, 4, 3, 0.9) 100%),
+    linear-gradient(90deg, rgba(3, 4, 3, 0.56) 0%, rgba(3, 4, 3, 0.1) 58%, transparent 100%);
+}
+.mock-aurel__nav {
+  position: relative;
+  z-index: 4;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 4cqw;
+  padding: 3.5cqw 4.3cqw;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.15);
+}
+.mock-aurel__logo {
+  font-family: var(--font-serif);
+  font-size: 3.1cqw;
+  font-style: italic;
+  letter-spacing: 0.08em;
+  line-height: 1;
+}
+.mock-aurel__links {
+  display: flex;
+  align-items: center;
+  gap: 3.2cqw;
+  color: rgba(255, 255, 255, 0.68);
+  font-family: var(--font-mono);
+  font-size: 1.03cqw;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+}
+.mock-aurel__enquire {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.8cqw;
+  padding: 1.05cqw 1.65cqw;
+  border: 1px solid rgba(255, 255, 255, 0.3);
+  border-radius: 999px;
+  color: #fff;
+  font-family: var(--font-mono);
+  font-size: 0.95cqw;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+}
+.mock-aurel__content {
+  position: absolute;
+  z-index: 4;
+  left: 4.3cqw;
+  bottom: 5.8cqw;
+  width: 64%;
+}
+.mock-aurel__kicker {
+  display: flex;
+  align-items: center;
+  gap: 1.3cqw;
+  margin-bottom: 2.1cqw;
+  color: rgba(255, 255, 255, 0.62);
+  font-family: var(--font-mono);
+  font-size: 1.02cqw;
+  letter-spacing: 0.13em;
+  text-transform: uppercase;
+}
+.mock-aurel__kicker::before {
+  content: "";
+  width: 2.8cqw;
+  height: 1px;
+  background: rgba(255, 255, 255, 0.56);
+}
+.mock-aurel h3 {
+  font-family: var(--font-serif);
+  font-size: 8.1cqw;
+  font-style: italic;
+  font-weight: 400;
+  line-height: 0.91;
+  letter-spacing: -0.015em;
+  color: #f4f0e8;
+  text-wrap: balance;
+}
+.mock-aurel h3 span {
+  display: block;
+  margin-top: 0.9cqw;
+  padding-left: 6.4cqw;
+  font-family: var(--font-sans);
+  font-size: 3.35cqw;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 1.1;
+  letter-spacing: -0.035em;
+  color: rgba(255, 255, 255, 0.9);
+}
+.mock-aurel__sub {
+  max-width: 42cqw;
+  margin-top: 2.9cqw;
+  color: rgba(255, 255, 255, 0.63);
+  font-size: 1.38cqw;
+  line-height: 1.55;
+}
+.mock-aurel__side {
+  position: absolute;
+  z-index: 4;
+  right: 3.4cqw;
+  top: 42%;
+  display: flex;
+  align-items: center;
+  gap: 1.2cqw;
+  color: rgba(255, 255, 255, 0.56);
+  font-family: var(--font-mono);
+  font-size: 0.88cqw;
+  letter-spacing: 0.13em;
+  text-transform: uppercase;
+  writing-mode: vertical-rl;
+}
+.mock-aurel__side::before {
+  content: "";
+  width: 1px;
+  height: 3.8cqw;
+  background: rgba(255, 255, 255, 0.35);
+}
+.mock-aurel__foot {
+  position: absolute;
+  z-index: 4;
+  right: 4.3cqw;
+  bottom: 2.6cqw;
+  left: 4.3cqw;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding-top: 1.25cqw;
+  border-top: 1px solid rgba(255, 255, 255, 0.15);
+  color: rgba(255, 255, 255, 0.46);
+  font-family: var(--font-mono);
+  font-size: 0.86cqw;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+}
+.mock-aurel__foot strong {
+  color: rgba(255, 255, 255, 0.8);
+  font-weight: 400;
+}
+/* AUREL phone */
+.phone-aurel {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+  background: #0b0b0a;
+  color: #f4f0e8;
+  container-type: inline-size;
+}
+.phone-aurel__image {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: 63% center;
+  filter: saturate(0.7) brightness(0.77) contrast(1.08);
+}
+.phone-aurel__scrim {
+  position: absolute;
+  inset: 0;
+  background:
+    linear-gradient(180deg, rgba(2, 3, 2, 0.55), transparent 24%),
+    linear-gradient(180deg, transparent 38%, rgba(3, 4, 3, 0.93) 86%);
+}
+.phone-aurel__nav {
+  position: relative;
+  z-index: 3;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 14cqw 7cqw 4cqw;
+  color: rgba(255, 255, 255, 0.9);
+}
+.phone-aurel__logo {
+  font-family: var(--font-serif);
+  font-size: 6.2cqw;
+  font-style: italic;
+  letter-spacing: 0.06em;
+}
+.phone-aurel__menu {
+  display: flex;
+  flex-direction: column;
+  gap: 1.2cqw;
+  width: 6.5cqw;
+}
+.phone-aurel__menu span {
+  height: 1px;
+  background: rgba(255, 255, 255, 0.7);
+}
+.phone-aurel__content {
+  position: absolute;
+  z-index: 3;
+  left: 7cqw;
+  right: 7cqw;
+  bottom: 11cqw;
+}
+.phone-aurel__kicker {
+  display: flex;
+  align-items: center;
+  gap: 2.4cqw;
+  margin-bottom: 4cqw;
+  color: rgba(255, 255, 255, 0.6);
+  font-family: var(--font-mono);
+  font-size: 2.2cqw;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+}
+.phone-aurel__kicker::before {
+  content: "";
+  width: 5cqw;
+  height: 1px;
+  background: rgba(255, 255, 255, 0.55);
+}
+.phone-aurel h4 {
+  font-family: var(--font-serif);
+  font-size: 14.8cqw;
+  font-style: italic;
+  font-weight: 400;
+  line-height: 0.88;
+  letter-spacing: -0.02em;
+}
+.phone-aurel__sub {
+  margin-top: 4.2cqw;
+  color: rgba(255, 255, 255, 0.6);
+  font-size: 2.75cqw;
+  line-height: 1.55;
+}
+.phone-aurel__cta {
+  display: inline-block;
+  margin-top: 6.2cqw;
+  padding-bottom: 1.9cqw;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.36);
+  color: rgba(255, 255, 255, 0.9);
+  font-family: var(--font-mono);
+  font-size: 2.35cqw;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+}
+/* ==========================================================================
+   MAISON Nº — restaurant concept
+   ========================================================================== */
+.mock-maison {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+  background: #f0e9de;
+  color: #281d19;
+  container-type: inline-size;
+  font-family: var(--font-sans);
+}
+.mock-maison__nav {
+  position: relative;
+  z-index: 3;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 2cqw;
+  padding: 2.5cqw 4.1cqw;
+  border-bottom: 1px solid rgba(42, 29, 24, 0.16);
+}
+.mock-maison__logo {
+  font-family: var(--font-serif);
+  font-size: 2.45cqw;
+  font-style: italic;
+  line-height: 1;
+  letter-spacing: 0.015em;
+}
+.mock-maison__links {
+  display: flex;
+  gap: 2.5cqw;
+  color: rgba(40, 29, 25, 0.62);
+  font-family: var(--font-mono);
+  font-size: 0.88cqw;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+}
+.mock-maison__reserve {
+  padding: 0.9cqw 1.5cqw;
+  border: 1px solid rgba(40, 29, 25, 0.32);
+  border-radius: 999px;
+  color: #281d19;
+  font-family: var(--font-mono);
+  font-size: 0.82cqw;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+}
+.mock-maison__body {
+  display: grid;
+  grid-template-columns: 55% 45%;
+  flex: 1;
+  min-height: 0;
+}
+.mock-maison__copy {
+  display: flex;
+  flex-direction: column;
+  padding: 4.5cqw 3.8cqw 3.2cqw 4.6cqw;
+}
+.mock-maison__kicker {
+  display: flex;
+  align-items: center;
+  gap: 1.1cqw;
+  color: rgba(40, 29, 25, 0.5);
+  font-family: var(--font-mono);
+  font-size: 0.86cqw;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+}
+.mock-maison__kicker::before {
+  content: "01";
+  display: grid;
+  place-items: center;
+  width: 2.5cqw;
+  height: 2.5cqw;
+  border: 1px solid rgba(40, 29, 25, 0.28);
+  border-radius: 50%;
+  font-size: 0.7cqw;
+}
+.mock-maison h4 {
+  margin-top: 2.3cqw;
+  color: #2f1d19;
+  font-family: var(--font-serif);
+  font-size: 7cqw;
+  font-style: italic;
+  font-weight: 400;
+  line-height: 0.88;
+  letter-spacing: -0.025em;
+}
+.mock-maison__desc {
+  max-width: 27cqw;
+  margin-top: 2.4cqw;
+  color: rgba(40, 29, 25, 0.63);
+  font-size: 1.18cqw;
+  line-height: 1.6;
+}
+.mock-maison__cta {
+  align-self: flex-start;
+  margin-top: 2.4cqw;
+  padding-bottom: 0.7cqw;
+  border-bottom: 1px solid rgba(40, 29, 25, 0.46);
+  color: #2f1d19;
+  font-family: var(--font-mono);
+  font-size: 0.86cqw;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+}
+.mock-maison__foot {
+  display: flex;
+  gap: 2.3cqw;
+  margin-top: auto;
+  padding-top: 2cqw;
+  border-top: 1px solid rgba(40, 29, 25, 0.14);
+  color: rgba(40, 29, 25, 0.52);
+  font-family: var(--font-mono);
+  font-size: 0.76cqw;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+}
+.mock-maison__image {
+  position: relative;
+  min-height: 0;
+  overflow: hidden;
+  background: #2a1b16;
+}
+.mock-maison__image img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  filter: saturate(0.78) brightness(0.87);
+  transition: transform 0.8s var(--ease);
+}
+.work-card:hover .mock-maison__image img {
+  transform: scale(1.035);
+}
+.mock-maison__image::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(180deg, transparent 56%, rgba(8, 5, 4, 0.58));
+}
+.mock-maison__caption {
+  position: absolute;
+  z-index: 2;
+  left: 2.3cqw;
+  right: 2.3cqw;
+  bottom: 2.2cqw;
+  display: flex;
+  justify-content: space-between;
+  gap: 1cqw;
+  color: rgba(255, 255, 255, 0.7);
+  font-family: var(--font-mono);
+  font-size: 0.78cqw;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+}
+.mock-maison__stamp {
+  position: absolute;
+  z-index: 2;
+  top: 2.2cqw;
+  right: 2.2cqw;
+  display: grid;
+  place-items: center;
+  width: 5.3cqw;
+  height: 5.3cqw;
+  border: 1px solid rgba(255, 255, 255, 0.4);
+  border-radius: 50%;
+  color: rgba(255, 255, 255, 0.8);
+  font-family: var(--font-serif);
+  font-size: 2.2cqw;
+  font-style: italic;
+  -webkit-backdrop-filter: blur(4px);
+  backdrop-filter: blur(4px);
+}
+/* Maison phone */
+.phone-mock--maison {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+  background: #f0e9de;
+  color: #281d19;
+  container-type: inline-size;
+}
+.pm-maison__nav {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 11cqw 7cqw 4cqw;
+  border-bottom: 1px solid rgba(40, 29, 25, 0.14);
+}
+.pm-maison__logo {
+  font-family: var(--font-serif);
+  font-size: 6.3cqw;
+  font-style: italic;
+}
+.pm-maison__menu {
+  display: flex;
+  flex-direction: column;
+  gap: 1.25cqw;
+  width: 6cqw;
+}
+.pm-maison__menu span {
+  height: 1px;
+  background: rgba(40, 29, 25, 0.6);
+}
+.pm-maison__image {
+  flex: 1.15;
+  min-height: 0;
+  overflow: hidden;
+}
+.pm-maison__image img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  filter: saturate(0.75) brightness(0.85);
+}
+.pm-maison__body {
+  flex: 0 0 auto;
+  padding: 6cqw 7cqw 8cqw;
+}
+.pm-maison__kicker {
+  color: rgba(40, 29, 25, 0.48);
+  font-family: var(--font-mono);
+  font-size: 2.15cqw;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+}
+.pm-maison h5 {
+  margin-top: 2.8cqw;
+  font-family: var(--font-serif);
+  font-size: 11.2cqw;
+  font-style: italic;
+  font-weight: 400;
+  line-height: 0.9;
+  letter-spacing: -0.025em;
+}
+.pm-maison__cta {
+  display: inline-block;
+  margin-top: 4.4cqw;
+  padding-bottom: 1.3cqw;
+  border-bottom: 1px solid rgba(40, 29, 25, 0.4);
+  font-family: var(--font-mono);
+  font-size: 2.1cqw;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+}
+
+/* ==========================================================================
+   VANTA — automotive concept
+   ========================================================================== */
+.mock-vanta {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+  background: #05070b;
+  color: #eef1f6;
+  container-type: inline-size;
+  font-family: var(--font-sans);
+}
+.mock-vanta__image {
+  position: absolute;
+  inset: 0 0 0 23%;
+  width: 77%;
+  height: 100%;
+  object-fit: cover;
+  object-position: 60% center;
+  filter: saturate(0.6) brightness(0.72) contrast(1.12);
+  transform: scale(1.03);
+  transition: transform 1.2s var(--ease);
+}
+.work-card:hover .mock-vanta__image {
+  transform: scale(1.075);
+}
+.mock-vanta__scrim {
+  position: absolute;
+  inset: 0;
+  background:
+    linear-gradient(90deg, #05070b 0%, rgba(5, 7, 11, 0.93) 30%, rgba(5, 7, 11, 0.38) 56%, rgba(5, 7, 11, 0.1) 78%, rgba(5, 7, 11, 0.22) 100%),
+    linear-gradient(180deg, rgba(5, 7, 11, 0.65) 0%, transparent 22%, transparent 70%, rgba(5, 7, 11, 0.72) 100%);
+}
+.mock-vanta__nav {
+  position: relative;
+  z-index: 4;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 2cqw;
+  padding: 3.2cqw 4.2cqw;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.12);
+}
+.mock-vanta__logo {
+  font-size: 2.2cqw;
+  font-weight: 600;
+  letter-spacing: 0.3em;
+  line-height: 1;
+}
+.mock-vanta__links {
+  display: flex;
+  gap: 2.5cqw;
+  color: rgba(255, 255, 255, 0.54);
+  font-family: var(--font-mono);
+  font-size: 0.8cqw;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+}
+.mock-vanta__enquire {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.7cqw;
+  color: #e9edf5;
+  font-family: var(--font-mono);
+  font-size: 0.8cqw;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+}
+.mock-vanta__enquire::after {
+  content: "";
+  width: 0.45cqw;
+  height: 0.45cqw;
+  border-radius: 50%;
+  background: var(--blue);
+  box-shadow: 0 0 0 0.45cqw rgba(67, 139, 255, 0.12);
+}
+.mock-vanta__content {
+  position: absolute;
+  z-index: 4;
+  left: 4.2cqw;
+  bottom: 7.5cqw;
+  width: 53%;
+}
+.mock-vanta__kicker {
+  display: inline-flex;
+  align-items: center;
+  gap: 1.1cqw;
+  padding: 0.55cqw 1.05cqw;
+  border: 1px solid rgba(67, 139, 255, 0.4);
+  border-radius: 999px;
+  color: #a8c7ff;
+  font-family: var(--font-mono);
+  font-size: 0.75cqw;
+  letter-spacing: 0.13em;
+  text-transform: uppercase;
+}
+.mock-vanta__kicker::before {
+  content: "";
+  width: 0.4cqw;
+  height: 0.4cqw;
+  border-radius: 50%;
+  background: var(--blue);
+}
+.mock-vanta h4 {
+  margin-top: 2cqw;
+  font-size: 8.1cqw;
+  font-weight: 500;
+  line-height: 0.86;
+  letter-spacing: -0.055em;
+}
+.mock-vanta h4 em {
+  font-family: var(--font-serif);
+  font-style: italic;
+  font-weight: 400;
+  letter-spacing: -0.025em;
+  background: linear-gradient(180deg, #fff, #87909e);
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+.mock-vanta__desc {
+  max-width: 27cqw;
+  margin-top: 2cqw;
+  color: rgba(255, 255, 255, 0.5);
+  font-size: 1.08cqw;
+  line-height: 1.6;
+}
+.mock-vanta__cta {
+  display: inline-flex;
+  align-items: center;
+  gap: 1.1cqw;
+  margin-top: 2.6cqw;
+  color: #f1f4fa;
+  font-family: var(--font-mono);
+  font-size: 0.82cqw;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+}
+.mock-vanta__cta::before {
+  content: "";
+  width: 2.7cqw;
+  height: 1px;
+  background: var(--blue);
+}
+.mock-vanta__specs {
+  position: absolute;
+  z-index: 4;
+  right: 4.2cqw;
+  bottom: 3.4cqw;
+  display: flex;
+  gap: 2.1cqw;
+  color: rgba(255, 255, 255, 0.46);
+  font-family: var(--font-mono);
+  font-size: 0.72cqw;
+  letter-spacing: 0.09em;
+  text-transform: uppercase;
+}
+.mock-vanta__specs span {
+  display: flex;
+  flex-direction: column;
+  gap: 0.3cqw;
+  padding-left: 1cqw;
+  border-left: 1px solid rgba(255, 255, 255, 0.14);
+}
+.mock-vanta__specs strong {
+  color: rgba(255, 255, 255, 0.88);
+  font-size: 1.15cqw;
+  font-weight: 500;
+  letter-spacing: 0.02em;
+}
+.mock-vanta__rail {
+  position: absolute;
+  z-index: 4;
+  right: 1.55cqw;
+  top: 44%;
+  color: rgba(255, 255, 255, 0.3);
+  font-family: var(--font-mono);
+  font-size: 0.66cqw;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+  writing-mode: vertical-rl;
+}
+.mock-vanta__index {
+  position: absolute;
+  z-index: 4;
+  right: 4.2cqw;
+  top: 8.1cqw;
+  color: rgba(255, 255, 255, 0.35);
+  font-family: var(--font-mono);
+  font-size: 0.75cqw;
+  letter-spacing: 0.12em;
+}
+/* Vanta phone */
+.phone-mock--vanta {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+  background: #06080d;
+  color: #f2f5fa;
+  container-type: inline-size;
+}
+.pm-vanta__image {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: 57% center;
+  filter: saturate(0.55) brightness(0.66);
+}
+.pm-vanta__scrim {
+  position: absolute;
+  inset: 0;
+  background:
+    linear-gradient(180deg, rgba(3, 5, 8, 0.65), transparent 28%),
+    linear-gradient(180deg, transparent 32%, rgba(3, 5, 8, 0.94) 78%);
+}
+.pm-vanta__nav {
+  position: relative;
+  z-index: 3;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 12cqw 7cqw 4cqw;
+}
+.pm-vanta__logo {
+  font-size: 4cqw;
+  font-weight: 600;
+  letter-spacing: 0.26em;
+}
+.pm-vanta__menu {
+  display: flex;
+  flex-direction: column;
+  gap: 1.2cqw;
+  width: 6cqw;
+}
+.pm-vanta__menu span {
+  height: 1px;
+  background: rgba(255, 255, 255, 0.7);
+}
+.pm-vanta__content {
+  position: absolute;
+  z-index: 3;
+  left: 7cqw;
+  right: 7cqw;
+  bottom: 10cqw;
+}
+.pm-vanta__kicker {
+  color: #9dc0ff;
+  font-family: var(--font-mono);
+  font-size: 2.15cqw;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+}
+.pm-vanta h5 {
+  margin-top: 3cqw;
+  font-size: 13.4cqw;
+  font-weight: 500;
+  line-height: 0.88;
+  letter-spacing: -0.055em;
+}
+.pm-vanta h5 em {
+  font-family: var(--font-serif);
+  font-style: italic;
+  font-weight: 400;
+}
+.pm-vanta__cta {
+  display: inline-block;
+  margin-top: 5.6cqw;
+  padding: 2.8cqw 4.4cqw;
+  border: 1px solid rgba(255, 255, 255, 0.25);
+  border-radius: 999px;
+  font-family: var(--font-mono);
+  font-size: 2.2cqw;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+}
+.pm-vanta__specs {
+  display: flex;
+  gap: 5cqw;
+  margin-top: 6cqw;
+  padding-top: 3.4cqw;
+  border-top: 1px solid rgba(255, 255, 255, 0.14);
+  color: rgba(255, 255, 255, 0.45);
+  font-family: var(--font-mono);
+  font-size: 1.9cqw;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+}
+.pm-vanta__specs strong {
+  display: block;
+  margin-bottom: 0.5cqw;
+  color: #fff;
+  font-size: 2.9cqw;
+  font-weight: 400;
+}
+/* ==========================================================================
+   MIRA — photography portfolio concept
+   ========================================================================== */
+.mock-mira {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+  background: #f0ede7;
+  color: #151514;
+  container-type: inline-size;
+  font-family: var(--font-sans);
+}
+.mock-mira__nav {
+  position: relative;
+  z-index: 3;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 2cqw;
+  padding: 2.7cqw 4.1cqw;
+  border-bottom: 1px solid rgba(20, 20, 19, 0.16);
+}
+.mock-mira__logo {
+  font-size: 2.65cqw;
+  font-weight: 500;
+  line-height: 1;
+  letter-spacing: 0.18em;
+}
+.mock-mira__links {
+  display: flex;
+  gap: 2.6cqw;
+  color: rgba(20, 20, 19, 0.56);
+  font-family: var(--font-mono);
+  font-size: 0.8cqw;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+}
+.mock-mira__index {
+  color: rgba(20, 20, 19, 0.56);
+  font-family: var(--font-mono);
+  font-size: 0.77cqw;
+  letter-spacing: 0.1em;
+}
+.mock-mira__body {
+  display: grid;
+  grid-template-columns: 29% 37% 34%;
+  flex: 1;
+  min-height: 0;
+}
+.mock-mira__copy {
+  display: flex;
+  flex-direction: column;
+  padding: 4.4cqw 2.3cqw 3cqw 4.1cqw;
+}
+.mock-mira__kicker {
+  color: rgba(20, 20, 19, 0.47);
+  font-family: var(--font-mono);
+  font-size: 0.8cqw;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+}
+.mock-mira h4 {
+  margin-top: 2.2cqw;
+  font-family: var(--font-serif);
+  font-size: 6.25cqw;
+  font-style: italic;
+  font-weight: 400;
+  line-height: 0.89;
+  letter-spacing: -0.025em;
+}
+.mock-mira__desc {
+  max-width: 22cqw;
+  margin-top: 2.4cqw;
+  color: rgba(20, 20, 19, 0.56);
+  font-size: 1.05cqw;
+  line-height: 1.65;
+}
+.mock-mira__cta {
+  align-self: flex-start;
+  margin-top: 2.3cqw;
+  padding-bottom: 0.7cqw;
+  border-bottom: 1px solid rgba(20, 20, 19, 0.42);
+  font-family: var(--font-mono);
+  font-size: 0.78cqw;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+}
+.mock-mira__meta {
+  display: flex;
+  flex-direction: column;
+  gap: 0.55cqw;
+  margin-top: auto;
+  padding-top: 2cqw;
+  border-top: 1px solid rgba(20, 20, 19, 0.14);
+  color: rgba(20, 20, 19, 0.46);
+  font-family: var(--font-mono);
+  font-size: 0.7cqw;
+  line-height: 1.6;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+}
+.mock-mira__figure {
+  position: relative;
+  min-height: 0;
+  overflow: hidden;
+  background: #bdb7ae;
+}
+.mock-mira__figure--main {
+  margin: 0;
+}
+.mock-mira__figure--side {
+  display: flex;
+  flex-direction: column;
+}
+.mock-mira__figure img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  filter: grayscale(1) contrast(1.06) brightness(0.94);
+  transition: transform 0.9s var(--ease), filter 0.7s ease;
+}
+.work-card:hover .mock-mira__figure img {
+  filter: grayscale(0.15) contrast(1.04) brightness(0.97);
+}
+.mock-mira__figure--main img {
+  object-position: 58% center;
+}
+.mock-mira__figure--side img {
+  object-position: 50% 38%;
+}
+.mock-mira__figure--side img:hover {
+  transform: scale(1.02);
+}
+.mock-mira__thumb-row {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  height: 30%;
+  border-top: 1px solid #f0ede7;
+}
+.mock-mira__thumb-row div {
+  overflow: hidden;
+  background: #b6b0a7;
+}
+.mock-mira__thumb-row img {
+  filter: grayscale(1) contrast(1.05) brightness(0.9);
+  object-fit: cover;
+}
+.mock-mira__caption {
+  position: absolute;
+  z-index: 2;
+  bottom: 1.6cqw;
+  left: 1.6cqw;
+  right: 1.6cqw;
+  display: flex;
+  justify-content: space-between;
+  color: rgba(255, 255, 255, 0.75);
+  font-family: var(--font-mono);
+  font-size: 0.68cqw;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  text-shadow: 0 1px 10px rgba(0, 0, 0, 0.5);
+}
+/* Mira phone */
+.phone-mock--mira {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+  background: #f0ede7;
+  color: #151514;
+  container-type: inline-size;
+}
+.pm-mira__nav {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 11cqw 7cqw 4cqw;
+  border-bottom: 1px solid rgba(20, 20, 19, 0.14);
+  font-size: 3.8cqw;
+  letter-spacing: 0.18em;
+  font-weight: 500;
+}
+.pm-mira__menu {
+  display: flex;
+  flex-direction: column;
+  gap: 1.2cqw;
+  width: 6cqw;
+}
+.pm-mira__menu span {
+  height: 1px;
+  background: rgba(20, 20, 19, 0.65);
+}
+.pm-mira__image {
+  flex: 1.35;
+  min-height: 0;
+  overflow: hidden;
+}
+.pm-mira__image img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: 55% 35%;
+  filter: grayscale(1) contrast(1.06);
+}
+.pm-mira__body {
+  flex: 0 0 auto;
+  padding: 5.6cqw 7cqw 8cqw;
+}
+.pm-mira__kicker {
+  color: rgba(20, 20, 19, 0.46);
+  font-family: var(--font-mono);
+  font-size: 2.05cqw;
+  letter-spacing: 0.11em;
+  text-transform: uppercase;
+}
+.pm-mira h5 {
+  margin-top: 2.5cqw;
+  font-family: var(--font-serif);
+  font-size: 11.4cqw;
+  font-style: italic;
+  font-weight: 400;
+  line-height: 0.89;
+}
+.pm-mira__link {
+  display: inline-block;
+  margin-top: 4.2cqw;
+  padding-bottom: 1.2cqw;
+  border-bottom: 1px solid rgba(20, 20, 19, 0.4);
+  font-family: var(--font-mono);
+  font-size: 2cqw;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+}
+
+/* ==========================================================================
+   ATELIER NORD — architecture & interiors concept
+   ========================================================================== */
+.mock-atelier {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+  background: #ebe4d8;
+  color: #292720;
+  container-type: inline-size;
+  font-family: var(--font-sans);
+}
+.mock-atelier__nav {
+  position: relative;
+  z-index: 3;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 2cqw;
+  padding: 2.8cqw 4.2cqw;
+  border-bottom: 1px solid rgba(41, 39, 32, 0.15);
+}
+.mock-atelier__logo {
+  font-family: var(--font-serif);
+  font-size: 2.25cqw;
+  line-height: 1;
+  letter-spacing: 0.08em;
+}
+.mock-atelier__links {
+  display: flex;
+  gap: 2.5cqw;
+  color: rgba(41, 39, 32, 0.55);
+  font-family: var(--font-mono);
+  font-size: 0.78cqw;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+}
+.mock-atelier__index {
+  color: rgba(41, 39, 32, 0.55);
+  font-family: var(--font-mono);
+  font-size: 0.74cqw;
+}
+.mock-atelier__body {
+  display: grid;
+  grid-template-columns: 43% 57%;
+  flex: 1;
+  min-height: 0;
+}
+.mock-atelier__copy {
+  position: relative;
+  z-index: 2;
+  display: flex;
+  flex-direction: column;
+  padding: 4.5cqw 3cqw 3.2cqw 4.3cqw;
+}
+.mock-atelier__kicker {
+  color: rgba(41, 39, 32, 0.46);
+  font-family: var(--font-mono);
+  font-size: 0.8cqw;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+}
+.mock-atelier h4 {
+  margin-top: 2.4cqw;
+  font-family: var(--font-serif);
+  font-size: 6.9cqw;
+  font-weight: 400;
+  line-height: 0.9;
+  letter-spacing: -0.02em;
+}
+.mock-atelier h4 em {
+  font-style: italic;
+}
+.mock-atelier__desc {
+  max-width: 25cqw;
+  margin-top: 2.3cqw;
+  color: rgba(41, 39, 32, 0.56);
+  font-size: 1.05cqw;
+  line-height: 1.65;
+}
+.mock-atelier__cta {
+  align-self: flex-start;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.9cqw;
+  margin-top: 2.4cqw;
+  font-family: var(--font-mono);
+  font-size: 0.78cqw;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+}
+.mock-atelier__cta::before {
+  content: "";
+  width: 2.3cqw;
+  height: 1px;
+  background: rgba(41, 39, 32, 0.45);
+}
+.mock-atelier__meta {
+  display: flex;
+  justify-content: space-between;
+  gap: 1cqw;
+  margin-top: auto;
+  padding-top: 2cqw;
+  border-top: 1px solid rgba(41, 39, 32, 0.13);
+  color: rgba(41, 39, 32, 0.44);
+  font-family: var(--font-mono);
+  font-size: 0.68cqw;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+}
+.mock-atelier__visual {
+  position: relative;
+  min-height: 0;
+  overflow: hidden;
+}
+.mock-atelier__visual > img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  filter: saturate(0.72) brightness(0.94) contrast(1.02);
+  transition: transform 1s var(--ease);
+}
+.work-card:hover .mock-atelier__visual > img {
+  transform: scale(1.03);
+}
+.mock-atelier__visual::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(180deg, transparent 58%, rgba(20, 18, 14, 0.5));
+}
+.mock-atelier__thumb {
+  position: absolute;
+  z-index: 2;
+  left: 2.3cqw;
+  bottom: 2.3cqw;
+  width: 25%;
+  aspect-ratio: 1.1;
+  overflow: hidden;
+  border: 1px solid rgba(255, 255, 255, 0.3);
+  box-shadow: 0 22px 40px rgba(0, 0, 0, 0.3);
+}
+.mock-atelier__thumb img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  filter: saturate(0.7) brightness(0.92);
+}
+.mock-atelier__caption {
+  position: absolute;
+  z-index: 2;
+  right: 2.3cqw;
+  bottom: 2.3cqw;
+  color: rgba(255, 255, 255, 0.72);
+  font-family: var(--font-mono);
+  font-size: 0.68cqw;
+  letter-spacing: 0.09em;
+  text-align: right;
+  text-transform: uppercase;
+}
+/* Atelier phone */
+.phone-mock--atelier {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+  background: #ebe4d8;
+  color: #292720;
+  container-type: inline-size;
+}
+.pm-atelier__nav {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 11cqw 7cqw 4cqw;
+  border-bottom: 1px solid rgba(41, 39, 32, 0.14);
+}
+.pm-atelier__logo {
+  font-family: var(--font-serif);
+  font-size: 5.4cqw;
+  letter-spacing: 0.06em;
+}
+.pm-atelier__menu {
+  display: flex;
+  flex-direction: column;
+  gap: 1.2cqw;
+  width: 6cqw;
+}
+.pm-atelier__menu span {
+  height: 1px;
+  background: rgba(41, 39, 32, 0.6);
+}
+.pm-atelier__image {
+  flex: 1.1;
+  min-height: 0;
+  overflow: hidden;
+}
+.pm-atelier__image img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  filter: saturate(0.7) brightness(0.93);
+}
+.pm-atelier__body {
+  flex: 0 0 auto;
+  padding: 6cqw 7cqw 8cqw;
+}
+.pm-atelier__kicker {
+  color: rgba(41, 39, 32, 0.45);
+  font-family: var(--font-mono);
+  font-size: 2.05cqw;
+  letter-spacing: 0.11em;
+  text-transform: uppercase;
+}
+.pm-atelier h5 {
+  margin-top: 2.8cqw;
+  font-family: var(--font-serif);
+  font-size: 11.8cqw;
+  font-weight: 400;
+  line-height: 0.9;
+}
+.pm-atelier h5 em {
+  font-style: italic;
+}
+.pm-atelier__link {
+  display: inline-block;
+  margin-top: 4.3cqw;
+  padding-bottom: 1.2cqw;
+  border-bottom: 1px solid rgba(41, 39, 32, 0.4);
+  font-family: var(--font-mono);
+  font-size: 2cqw;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+}
+/* ==========================================================================
+   FORM & FIELD — e-commerce concept
+   ========================================================================== */
+.mock-formfield {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+  background: #f1eee5;
+  color: #1a211b;
+  container-type: inline-size;
+  font-family: var(--font-sans);
+}
+.mock-formfield__nav {
+  position: relative;
+  z-index: 3;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 2cqw;
+  padding: 2.5cqw 4.1cqw;
+  border-bottom: 1px solid rgba(26, 33, 27, 0.15);
+}
+.mock-formfield__logo {
+  font-family: var(--font-serif);
+  font-size: 2.1cqw;
+  line-height: 1;
+  letter-spacing: 0.02em;
+}
+.mock-formfield__links {
+  display: flex;
+  gap: 2.6cqw;
+  color: rgba(26, 33, 27, 0.55);
+  font-family: var(--font-mono);
+  font-size: 0.78cqw;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+}
+.mock-formfield__bag {
+  color: rgba(26, 33, 27, 0.7);
+  font-family: var(--font-mono);
+  font-size: 0.76cqw;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+}
+.mock-formfield__body {
+  display: grid;
+  grid-template-columns: 42% 58%;
+  flex: 1;
+  min-height: 0;
+}
+.mock-formfield__copy {
+  display: flex;
+  flex-direction: column;
+  padding: 4.4cqw 2.4cqw 3cqw 4.2cqw;
+}
+.mock-formfield__kicker {
+  color: rgba(26, 33, 27, 0.46);
+  font-family: var(--font-mono);
+  font-size: 0.78cqw;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+}
+.mock-formfield h4 {
+  margin-top: 2.2cqw;
+  font-family: var(--font-serif);
+  font-size: 6.4cqw;
+  font-style: italic;
+  font-weight: 400;
+  line-height: 0.88;
+  letter-spacing: -0.02em;
+}
+.mock-formfield h4 span {
+  display: block;
+  padding-left: 3.4cqw;
+  font-family: var(--font-sans);
+  font-size: 2.8cqw;
+  font-style: normal;
+  line-height: 1.1;
+  letter-spacing: -0.035em;
+}
+.mock-formfield__desc {
+  max-width: 23cqw;
+  margin-top: 2.2cqw;
+  color: rgba(26, 33, 27, 0.56);
+  font-size: 1.02cqw;
+  line-height: 1.65;
+}
+.mock-formfield__cta {
+  align-self: flex-start;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.9cqw;
+  margin-top: 2.3cqw;
+  padding: 0.85cqw 1.4cqw;
+  border-radius: 999px;
+  background: #1d2a21;
+  color: #f3efe5;
+  font-family: var(--font-mono);
+  font-size: 0.75cqw;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+}
+.mock-formfield__foot {
+  display: flex;
+  gap: 2.2cqw;
+  margin-top: auto;
+  padding-top: 1.8cqw;
+  border-top: 1px solid rgba(26, 33, 27, 0.13);
+  color: rgba(26, 33, 27, 0.43);
+  font-family: var(--font-mono);
+  font-size: 0.68cqw;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+}
+.mock-formfield__products {
+  display: grid;
+  grid-template-columns: 1.12fr 0.88fr;
+  gap: 1.2cqw;
+  padding: 2.6cqw 2.6cqw 2.6cqw 1.2cqw;
+  min-height: 0;
+}
+.mock-formfield__product {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  min-height: 0;
+  overflow: hidden;
+  border-radius: 0.4cqw;
+  background: #e7e3d8;
+}
+.mock-formfield__product--alt {
+  margin-top: 4.5cqw;
+}
+.mock-formfield__product-image {
+  flex: 1;
+  min-height: 0;
+  overflow: hidden;
+  background: #dedacf;
+}
+.mock-formfield__product-image img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.8s var(--ease);
+}
+.work-card:hover .mock-formfield__product-image img {
+  transform: scale(1.035);
+}
+.mock-formfield__product--alt .mock-formfield__product-image img {
+  object-position: 50% 50%;
+}
+.mock-formfield__product figcaption {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 0.6cqw;
+  padding: 1.1cqw 1.3cqw;
+  background: #f5f2e9;
+  color: #263128;
+  font-size: 0.92cqw;
+  line-height: 1.3;
+}
+.mock-formfield__product figcaption span {
+  color: rgba(26, 33, 27, 0.52);
+  font-family: var(--font-mono);
+  font-size: 0.72cqw;
+}
+.mock-formfield__pill {
+  position: absolute;
+  z-index: 2;
+  top: 1cqw;
+  left: 1cqw;
+  padding: 0.35cqw 0.7cqw;
+  border-radius: 999px;
+  background: rgba(29, 42, 33, 0.82);
+  color: #f3efe5;
+  font-family: var(--font-mono);
+  font-size: 0.58cqw;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+}
+/* Form & Field phone */
+.phone-mock--formfield {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+  background: #f1eee5;
+  color: #1a211b;
+  container-type: inline-size;
+}
+.pm-formfield__nav {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 11cqw 7cqw 4cqw;
+  border-bottom: 1px solid rgba(26, 33, 27, 0.14);
+}
+.pm-formfield__logo {
+  font-family: var(--font-serif);
+  font-size: 4.9cqw;
+}
+.pm-formfield__menu {
+  display: flex;
+  flex-direction: column;
+  gap: 1.2cqw;
+  width: 6cqw;
+}
+.pm-formfield__menu span {
+  height: 1px;
+  background: rgba(26, 33, 27, 0.6);
+}
+.pm-formfield__image {
+  flex: 1.2;
+  min-height: 0;
+  overflow: hidden;
+  background: #e1ddd2;
+}
+.pm-formfield__image img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+.pm-formfield__body {
+  flex: 0 0 auto;
+  padding: 5.8cqw 7cqw 8cqw;
+}
+.pm-formfield__kicker {
+  color: rgba(26, 33, 27, 0.46);
+  font-family: var(--font-mono);
+  font-size: 2.05cqw;
+  letter-spacing: 0.11em;
+  text-transform: uppercase;
+}
+.pm-formfield h5 {
+  margin-top: 2.6cqw;
+  font-family: var(--font-serif);
+  font-size: 11.3cqw;
+  font-style: italic;
+  font-weight: 400;
+  line-height: 0.9;
+}
+.pm-formfield__link {
+  display: inline-block;
+  margin-top: 4.3cqw;
+  padding: 2.6cqw 4.1cqw;
+  border-radius: 999px;
+  background: #1d2a21;
+  color: #f3efe5;
+  font-family: var(--font-mono);
+  font-size: 1.95cqw;
+  letter-spacing: 0.09em;
+  text-transform: uppercase;
+}
+
+/* ==========================================================================
+   NORTHSTAR — corporate concept
+   ========================================================================== */
+.mock-northstar {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+  background: #0a0f16;
+  color: #edf1f7;
+  container-type: inline-size;
+  font-family: var(--font-sans);
+}
+.mock-northstar__image {
+  position: absolute;
+  inset: 0 0 0 52%;
+  width: 48%;
+  height: 100%;
+  object-fit: cover;
+  object-position: 52% center;
+  filter: saturate(0.45) brightness(0.66) contrast(1.08);
+  transition: transform 1.2s var(--ease);
+}
+.work-card:hover .mock-northstar__image {
+  transform: scale(1.035);
+}
+.mock-northstar__grid {
+  position: absolute;
+  inset: 0;
+  background-image:
+    linear-gradient(rgba(255, 255, 255, 0.055) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(255, 255, 255, 0.055) 1px, transparent 1px);
+  background-size: 8cqw 8cqw;
+  -webkit-mask-image: linear-gradient(90deg, #000, transparent 78%);
+  mask-image: linear-gradient(90deg, #000, transparent 78%);
+  opacity: 0.45;
+}
+.mock-northstar__scrim {
+  position: absolute;
+  inset: 0;
+  background:
+    linear-gradient(90deg, #0a0f16 0%, rgba(10, 15, 22, 0.92) 34%, rgba(10, 15, 22, 0.24) 66%, rgba(10, 15, 22, 0.52) 100%),
+    linear-gradient(180deg, rgba(10, 15, 22, 0.68), transparent 22%, transparent 70%, rgba(10, 15, 22, 0.72));
+}
+.mock-northstar__nav {
+  position: relative;
+  z-index: 4;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 2cqw;
+  padding: 2.9cqw 4.2cqw;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.13);
+}
+.mock-northstar__logo {
+  display: flex;
+  align-items: center;
+  gap: 0.8cqw;
+  font-size: 1.55cqw;
+  font-weight: 500;
+  letter-spacing: 0.08em;
+}
+.mock-northstar__logo::before {
+  content: "";
+  width: 1.15cqw;
+  height: 1.15cqw;
+  border: 1px solid var(--blue);
+  transform: rotate(45deg);
+}
+.mock-northstar__links {
+  display: flex;
+  gap: 2.3cqw;
+  color: rgba(255, 255, 255, 0.52);
+  font-family: var(--font-mono);
+  font-size: 0.72cqw;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+}
+.mock-northstar__contact {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.8cqw;
+  padding: 0.8cqw 1.4cqw;
+  border: 1px solid rgba(255, 255, 255, 0.24);
+  border-radius: 999px;
+  color: #e9eef6;
+  font-family: var(--font-mono);
+  font-size: 0.7cqw;
+  letter-spacing: 0.09em;
+  text-transform: uppercase;
+}
+.mock-northstar__content {
+  position: absolute;
+  z-index: 4;
+  left: 4.2cqw;
+  bottom: 8.5cqw;
+  width: 56%;
+}
+.mock-northstar__kicker {
+  display: inline-flex;
+  align-items: center;
+  gap: 1.1cqw;
+  color: #92b9ff;
+  font-family: var(--font-mono);
+  font-size: 0.74cqw;
+  letter-spacing: 0.13em;
+  text-transform: uppercase;
+}
+.mock-northstar__kicker::before {
+  content: "";
+  width: 2.6cqw;
+  height: 1px;
+  background: var(--blue);
+}
+.mock-northstar h4 {
+  margin-top: 2cqw;
+  font-size: 7.2cqw;
+  font-weight: 500;
+  line-height: 0.88;
+  letter-spacing: -0.055em;
+}
+.mock-northstar h4 em {
+  font-family: var(--font-serif);
+  font-style: italic;
+  font-weight: 400;
+  letter-spacing: -0.025em;
+  color: #d9e3f4;
+}
+.mock-northstar__desc {
+  max-width: 30cqw;
+  margin-top: 2.2cqw;
+  color: rgba(255, 255, 255, 0.5);
+  font-size: 1.06cqw;
+  line-height: 1.65;
+}
+.mock-northstar__cta {
+  display: inline-flex;
+  align-items: center;
+  gap: 1cqw;
+  margin-top: 2.5cqw;
+  color: #f2f5fa;
+  font-family: var(--font-mono);
+  font-size: 0.78cqw;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+}
+.mock-northstar__cta::after {
+  content: "→";
+  color: var(--blue);
+}
+.mock-northstar__panel {
+  position: absolute;
+  z-index: 4;
+  right: 4.2cqw;
+  top: 31%;
+  width: 19%;
+  padding: 1.8cqw;
+  border: 1px solid rgba(255, 255, 255, 0.16);
+  border-radius: 0.35cqw;
+  background: rgba(8, 12, 18, 0.42);
+  -webkit-backdrop-filter: blur(10px);
+  backdrop-filter: blur(10px);
+}
+.mock-northstar__panel > span {
+  display: block;
+  color: rgba(255, 255, 255, 0.4);
+  font-family: var(--font-mono);
+  font-size: 0.62cqw;
+  letter-spacing: 0.11em;
+  text-transform: uppercase;
+}
+.mock-northstar__panel strong {
+  display: block;
+  margin-top: 0.75cqw;
+  color: #fff;
+  font-size: 1.35cqw;
+  font-weight: 500;
+  letter-spacing: -0.02em;
+}
+.mock-northstar__panel-line {
+  height: 1px;
+  margin: 1.05cqw 0;
+  background: rgba(255, 255, 255, 0.13);
+}
+.mock-northstar__panel p {
+  color: rgba(255, 255, 255, 0.43);
+  font-family: var(--font-mono);
+  font-size: 0.62cqw;
+  line-height: 1.6;
+}
+.mock-northstar__foot {
+  position: absolute;
+  z-index: 4;
+  left: 4.2cqw;
+  right: 4.2cqw;
+  bottom: 2.5cqw;
+  display: flex;
+  justify-content: space-between;
+  padding-top: 1.2cqw;
+  border-top: 1px solid rgba(255, 255, 255, 0.12);
+  color: rgba(255, 255, 255, 0.33);
+  font-family: var(--font-mono);
+  font-size: 0.66cqw;
+  letter-spacing: 0.09em;
+  text-transform: uppercase;
+}
+/* Northstar phone */
+.phone-mock--northstar {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+  background: #0a0f16;
+  color: #edf1f7;
+  container-type: inline-size;
+}
+.pm-northstar__image {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: 58% center;
+  filter: saturate(0.4) brightness(0.58);
+}
+.pm-northstar__scrim {
+  position: absolute;
+  inset: 0;
+  background:
+    linear-gradient(180deg, rgba(6, 10, 15, 0.7), transparent 27%),
+    linear-gradient(180deg, transparent 30%, rgba(6, 10, 15, 0.95) 76%);
+}
+.pm-northstar__nav {
+  position: relative;
+  z-index: 3;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 12cqw 7cqw 4cqw;
+}
+.pm-northstar__logo {
+  font-size: 3.1cqw;
+  font-weight: 500;
+  letter-spacing: 0.09em;
+}
+.pm-northstar__menu {
+  display: flex;
+  flex-direction: column;
+  gap: 1.2cqw;
+  width: 6cqw;
+}
+.pm-northstar__menu span {
+  height: 1px;
+  background: rgba(255, 255, 255, 0.7);
+}
+.pm-northstar__content {
+  position: absolute;
+  z-index: 3;
+  left: 7cqw;
+  right: 7cqw;
+  bottom: 10cqw;
+}
+.pm-northstar__kicker {
+  color: #9fc0ff;
+  font-family: var(--font-mono);
+  font-size: 2.05cqw;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+}
+.pm-northstar h5 {
+  margin-top: 3cqw;
+  font-size: 12.6cqw;
+  font-weight: 500;
+  line-height: 0.9;
+  letter-spacing: -0.055em;
+}
+.pm-northstar h5 em {
+  font-family: var(--font-serif);
+  font-weight: 400;
+}
+.pm-northstar__link {
+  display: inline-block;
+  margin-top: 4.5cqw;
+  padding: 2.7cqw 4.3cqw;
+  border: 1px solid rgba(255, 255, 255, 0.25);
+  border-radius: 999px;
+  font-family: var(--font-mono);
+  font-size: 2.05cqw;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+}
+/* END_MOCK_4 */
+
+
+
