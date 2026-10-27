@@ -84,7 +84,7 @@ All developer-facing setup notes have been removed from the published pages. The
 - [ ] FormSubmit activation link clicked, then a live submission delivered to `webzysite@hotmail.com`.
 - [x] Privacy page updated with FormSubmit and the Outlook/Hotmail destination.
 - [ ] Confirm the live test email arrived in `webzysite@hotmail.com` (check spam too).
-- [ ] Canonical URLs and absolute social-image URLs added after the domain is known.
+- [x] Canonical URLs, absolute social-image URLs and `sitemap.xml` added for `https://webzysite.com`.
 - [ ] Privacy policy reviewed for the operator's jurisdiction and business details.
 - [ ] PayPal payment links re-tested after any package copy or price change.
 
@@ -92,15 +92,16 @@ All developer-facing setup notes have been removed from the published pages. The
 
 ## 4. Pricing and PayPal payment links
 
-The homepage includes a `#pricing` section placed after Selected Work. It presents three fixed-scope packages:
+The homepage includes a `#pricing` section placed after Selected Work. It presents four fixed-scope packages in a 4-column grid (2 columns below 1180px, 1 column below 980px):
 
 | Package | Price | PayPal payment link |
 | --- | --- | --- |
-| WEBZY Starter | **199€** | <https://www.paypal.com/ncp/payment/9YCFX9JPB2GJJ> |
-| WEBZY Business (highlighted, `MË E ZGJEDHURA`) | **399€** | <https://www.paypal.com/ncp/payment/K9H7PBU6E4EPU> |
-| WEBZY Premium | **799€** | <https://www.paypal.com/ncp/payment/4J3B26WPKXFYC> |
+| WEBZY Standard | **490€** | <https://www.paypal.com/ncp/payment/4J3B26WPKXFYC> |
+| WEBZY Standard Biznes (highlighted, `MË E ZGJEDHURA`) | **790€** | <https://www.paypal.com/ncp/payment/9YCFX9JPB2GJJ> |
+| WEBZY Standard Pro | **1,290€** | <https://www.paypal.com/ncp/payment/K9H7PBU6E4EPU> |
+| WEBZY Standard Store | **1,790€** | <https://www.paypal.com/ncp/payment/FN9A47P9P8AKC> |
 
-Each card ends with a black, white-text anchor reading **“💳 Paguaj me Kartelë - 199€ / 399€ / 799€”**. The links use `target="_blank"` and `rel="noopener noreferrer"`; an `.sr-only` note tells screen-reader users that PayPal opens in a new tab.
+Each card ends with a black, white-text anchor reading **“💳 Paguaj me Kartelë - 490€ / 790€ / 1,290€ / 1,790€”**. The links use `target="_blank"` and `rel="noopener noreferrer"`; an `.sr-only` note tells screen-reader users that PayPal opens in a new tab.
 
 ### Fixed pricing
 
@@ -319,7 +320,7 @@ QA performed on the nine pages:
 - form tests: empty fields, invalid email, stubbed JSON success with the exact Albanian message, stubbed JSON rejection, payload keys; the live FormSubmit endpoint returned its activation notice (no false success);
 - mobile menu tests: open/close, focus trap, Escape and focus return — including the Pricing item;
 - reduced-motion tests: all content visible, animations disabled;
-- pricing checks: all three cards in order after Selected Work, exact visible button labels, exact PayPal URLs, `target="_blank"`, `rel="noopener noreferrer"`, black background with white text, highlighted Business card and email strip;
+- pricing checks: all four cards in order after Selected Work, exact visible button labels, exact PayPal URLs, `target="_blank"`, `rel="noopener noreferrer"`, black background with white text, highlighted Standard Biznes card and email strip;
 - privacy checks: payment and form metadata, FormSubmit and PayPal disclosures, external privacy links and the live business email.
 
 Visual review covered the pricing section at **320, 390 and 1440 px**, plus the privacy page and 404 page at desktop and mobile sizes. No console errors, failed requests or missing assets were observed.
