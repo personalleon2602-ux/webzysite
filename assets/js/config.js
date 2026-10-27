@@ -21,9 +21,11 @@ window.WEBZY_CONFIG = {
   whatsappMessage: "Përshëndetje WEBZY! Dua të di më shumë për një faqe interneti.",
 
   /* Client reviews — only real reviews, with the client's permission.
+     Clients submit them at /vleresim.html; they arrive by email through
+     FormSubmit and are published only after they are copied here.
      The "Vlerësime" section on the homepage stays hidden while this is empty.
      Example:
-       { quote: "Faqja u bë gati për 7 ditë...", name: "Arben K.",
+       { quote: "Faqja u bë gati për 7 ditë...", name: "Arben K.", rating: 5,
          business: "Kafe Luna, Prishtinë", url: "https://kafeluna.com" } */
   reviews: [],
 

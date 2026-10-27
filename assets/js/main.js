@@ -391,6 +391,14 @@
     reviews.forEach((review) => {
       const card = doc.createElement('figure');
       card.className = 'review-card';
+      const rating = Math.round(Number(review.rating));
+      if (rating >= 1 && rating <= 5) {
+        const stars = doc.createElement('p');
+        stars.className = 'review-card__stars';
+        stars.textContent = '★'.repeat(rating) + '☆'.repeat(5 - rating);
+        stars.setAttribute('aria-label', `${rating} nga 5 yje`);
+        card.append(stars);
+      }
       const quote = doc.createElement('blockquote');
       quote.className = 'review-card__quote';
       quote.textContent = String(review.quote).trim();
@@ -454,32 +462,35 @@
     link.addEventListener('click', () => setService(link.dataset.service));
   });
 
-  /* ---------- Inquiry form ---------- */
-  const form = $('[data-inquiry-form]');
-  if (form) {
+  /* ---------- Forms (project inquiry + client review) ---------- */
+  /* Validation rules per field: minimum length, email format, required
+     choice or required checkbox. */
+  const fieldRules = {
+    name: { min: 2 },
+    email: { email: true },
+    websiteType: { choice: true },
+    description: { min: 20 },
+    rating: { choice: true },
+    review: { min: 20 },
+    consent: { checked: true },
+    publish: { checked: true }
+  };
+
+  const initForm = (form, options) => {
+    if (!form) return;
     const status = $('[data-form-status]', form.parentElement || doc) || $('[data-form-status]');
-    const setupNote = $('[data-form-setup]');
+    const setupNote = options.useSetupNote ? $('[data-form-setup]') : null;
     const submit = $('[data-submit]', form);
     const submitLabel = $('[data-submit-label]', form);
     const spinner = $('[data-spinner]', form);
     const endpoint = formEndpoint;
-    const fields = {
-      name: $('#name', form),
-      email: $('#email', form),
-      websiteType: $('#websiteType', form),
-      description: $('#description', form),
-      consent: $('#consent', form)
-    };
+    const fields = {};
+    Object.keys(options.messages).forEach((name) => {
+      fields[name] = $(`#${name}`, form);
+    });
+    const { messages } = options;
 
     if (setupNote) setupNote.hidden = endpoint.length > 0;
-
-    const messages = {
-      name: 'Shkruani emrin (së paku 2 shkronja).',
-      email: 'Shkruani një adresë email-i të saktë.',
-      websiteType: 'Zgjidhni llojin e faqes.',
-      description: 'Na shkruani pak më shumë — së paku 20 shkronja.',
-      consent: 'Konfirmoni që pajtoheni me informacionin për privatësinë.'
-    };
 
     const fieldWrap = (field) => field?.closest('.field');
     const errorFor = (name) => $(`[data-error-for="${name}"]`, form);
@@ -509,24 +520,14 @@
     const validateField = (name) => {
       const field = fields[name];
       if (!field) return true;
-      let message = '';
+      const rule = fieldRules[name] || {};
       const value = field.type === 'checkbox' ? field.checked : field.value.trim();
-
-      if (name === 'name' && (typeof value !== 'string' || value.length < 2)) {
-        message = messages.name;
-      }
-      if (name === 'email' && (typeof value !== 'string' || !/^[^\s@]+@[^\s@]+\.[^\s@]{2,}$/.test(value))) {
-        message = messages.email;
-      }
-      if (name === 'websiteType' && !value) {
-        message = messages.websiteType;
-      }
-      if (name === 'description' && (typeof value !== 'string' || value.length < 20)) {
-        message = messages.description;
-      }
-      if (name === 'consent' && value !== true) {
-        message = messages.consent;
-      }
+      const invalid =
+        (rule.min && (typeof value !== 'string' || value.length < rule.min)) ||
+        (rule.email && (typeof value !== 'string' || !/^[^\s@]+@[^\s@]+\.[^\s@]{2,}$/.test(value))) ||
+        (rule.choice && !value) ||
+        (rule.checked && value !== true);
+      const message = invalid ? messages[name] : '';
 
       setFieldError(name, message);
       return !message;
@@ -572,7 +573,7 @@
       if (!submit) return;
       submit.disabled = isSubmitting;
       submit.setAttribute('aria-busy', String(isSubmitting));
-      if (submitLabel) submitLabel.textContent = isSubmitting ? 'Duke dërguar…' : 'Dërgo kërkesën';
+      if (submitLabel) submitLabel.textContent = isSubmitting ? 'Duke dërguar…' : options.submitLabel;
       if (spinner) spinner.hidden = !isSubmitting;
     };
 
@@ -615,7 +616,7 @@
 
       const payload = new FormData(form);
       payload.delete('_gotcha');
-      payload.set('_subject', config.subject || 'Kërkesë e re për projekt — WEBZY');
+      payload.set('_subject', options.subject);
       payload.set('page', window.location.href);
       payload.set('submittedAt', new Date().toISOString());
 
@@ -685,11 +686,7 @@
           }
         }
 
-        setStatus(
-          'success',
-          config.successTitle || 'Kërkesa u dërgua',
-          config.successMessage || 'Kërkesa juaj u dërgua me sukses.'
-        );
+        setStatus('success', options.successTitle, options.successMessage);
         form.reset();
         Object.keys(fields).forEach((name) => setFieldError(name, ''));
         if (setupNote) setupNote.hidden = true;
@@ -707,7 +704,36 @@
         setSubmitting(false);
       }
     });
-  }
+  };
+
+  initForm($('[data-inquiry-form]'), {
+    useSetupNote: true,
+    subject: config.subject || 'Kërkesë e re për projekt — WEBZY',
+    submitLabel: 'Dërgo kërkesën',
+    successTitle: config.successTitle || 'Kërkesa u dërgua',
+    successMessage: config.successMessage || 'Kërkesa juaj u dërgua me sukses.',
+    messages: {
+      name: 'Shkruani emrin (së paku 2 shkronja).',
+      email: 'Shkruani një adresë email-i të saktë.',
+      websiteType: 'Zgjidhni llojin e faqes.',
+      description: 'Na shkruani pak më shumë — së paku 20 shkronja.',
+      consent: 'Konfirmoni që pajtoheni me informacionin për privatësinë.'
+    }
+  });
+
+  initForm($('[data-review-form]'), {
+    subject: 'Vlerësim i ri nga klienti — WEBZY',
+    submitLabel: 'Dërgo vlerësimin',
+    successTitle: 'Faleminderit!',
+    successMessage: 'Vlerësimi juaj u dërgua. Do të shfaqet në faqe pasi ta shqyrtojmë.',
+    messages: {
+      name: 'Shkruani emrin (së paku 2 shkronja).',
+      email: 'Shkruani një adresë email-i të saktë.',
+      rating: 'Zgjidhni një vlerësim.',
+      review: 'Na shkruani pak më shumë — së paku 20 shkronja.',
+      publish: 'Konfirmoni që vlerësimi mund të publikohet.'
+    }
+  });
 
   /* ---------- Current year ---------- */
   $$('[data-year]').forEach((el) => {

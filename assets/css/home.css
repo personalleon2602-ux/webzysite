@@ -1271,6 +1271,29 @@
 .review-card__author a:hover {
   color: #0a84ff;
 }
+.review-card__stars {
+  margin: 0 0 -12px;
+  color: #0a84ff;
+  font-size: 15px;
+  letter-spacing: 0.12em;
+}
+.reviews__cta {
+  margin-top: 22px;
+  color: var(--muted);
+  font-size: 14px;
+}
+.reviews__cta a {
+  color: #0a84ff;
+}
+.review-wrap {
+  max-width: 860px;
+  padding-block: clamp(40px, 6vw, 80px) clamp(64px, 9vw, 120px);
+}
+.review-wrap .contact__form-head h2 {
+  color: var(--white);
+  font-size: 22px;
+  font-weight: 500;
+}
 
 /* ---------- Hero 3D floor ---------- */
 .hero__floor {
