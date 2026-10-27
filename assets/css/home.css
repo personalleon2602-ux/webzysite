@@ -799,8 +799,8 @@
 }
 .pricing-grid {
   display: grid;
-  grid-template-columns: repeat(3, minmax(0, 1fr));
-  gap: clamp(16px, 1.8vw, 24px);
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: clamp(14px, 1.4vw, 20px);
   align-items: stretch;
 }
 .price-card {
@@ -808,7 +808,7 @@
   display: flex;
   flex-direction: column;
   min-width: 0;
-  padding: clamp(26px, 2.8vw, 38px);
+  padding: clamp(24px, 2.1vw, 30px);
   overflow: hidden;
   border: 1px solid var(--line);
   background:
@@ -917,6 +917,7 @@
 }
 .price-card__price {
   display: flex;
+  flex-wrap: wrap;
   align-items: flex-end;
   gap: 13px;
   margin-top: 22px;
@@ -925,7 +926,7 @@
 }
 .price-card__amount {
   color: var(--white);
-  font-size: clamp(3rem, 4.2vw, 4.05rem);
+  font-size: clamp(2.5rem, 2.9vw, 3.2rem);
   font-weight: 500;
   line-height: 0.84;
   letter-spacing: -0.075em;
@@ -2040,6 +2041,12 @@
   }
   .contact__details {
     max-width: 520px;
+  }
+}
+
+@media (max-width: 1180px) {
+  .pricing-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
   }
 }
 

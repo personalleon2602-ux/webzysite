@@ -279,7 +279,7 @@
           const tick = (now) => {
             const t = Math.min((now - startTime) / duration, 1);
             const eased = 1 - Math.pow(1 - t, 4);
-            el.textContent = `${Math.round(Number(end) * eased)}${suffix}`;
+            el.textContent = `${Math.round(Number(end) * eased).toLocaleString('en-US')}${suffix}`;
             if (t < 1) window.requestAnimationFrame(tick);
           };
           window.requestAnimationFrame(tick);
@@ -288,9 +288,9 @@
       { threshold: 0.6 }
     );
     amounts.forEach((el) => {
-      const match = el.textContent.trim().match(/^(\d+)(.*)$/);
+      const match = el.textContent.trim().match(/^(\d[\d,]*)(.*)$/);
       if (!match) return;
-      el.dataset.end = match[1];
+      el.dataset.end = match[1].replace(/,/g, '');
       el.dataset.suffix = match[2];
       el.setAttribute('aria-label', el.textContent.trim());
       el.textContent = `0${match[2]}`;
